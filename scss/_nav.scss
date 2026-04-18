@@ -1,12 +1,58 @@
 #sideNav {
+  background: var(--nav-bg);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+
   .navbar-nav .nav-item .nav-link {
-    font-weight: 800;
+    font-weight: 600;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
+
+  .navbar-nav .nav-item .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover::before,
+  .navbar-nav .nav-item .nav-link.active::before {
+    left: 0;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover,
+  .navbar-nav .nav-item .nav-link.active {
+    color: white;
+    transform: translateX(5px);
+  }
+
   .navbar-toggler {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+
     &:focus {
-      outline-color: lighten($primary, 15%);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(15, 52, 96, 0.3);
+      background: var(--accent-secondary);
+    }
+
+    &:hover {
+      background: var(--accent-secondary);
     }
   }
 }
@@ -17,38 +63,54 @@
     position: fixed;
     top: 0;
     left: 0;
-
     display: flex;
     flex-direction: column;
-
     width: $sidebar-base-width;
     height: 100vh;
+    background: var(--nav-bg);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+
     .navbar-brand {
       display: flex;
-
       margin: auto auto 0;
       padding: 0.5rem;
+
       .img-profile {
         max-width: 10rem;
         max-height: 10rem;
-        border: 0.5rem solid fade-out($white, 0.8);
+        border: 0.5rem solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      .img-profile:hover {
+        transform: scale(1.05);
+        border-color: var(--accent-color);
       }
     }
+
     .navbar-collapse {
       display: flex;
       align-items: flex-start;
       flex-grow: 0;
-
       width: 100%;
       margin-bottom: auto;
+
       .navbar-nav {
         flex-direction: column;
-
         width: 100%;
+
         .nav-item {
           display: block;
+
           .nav-link {
             display: block;
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 1rem;
+            border-radius: 8px;
+            position: relative;
+            transition: all 0.3s ease;
           }
         }
       }

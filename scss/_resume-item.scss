@@ -1,27 +1,88 @@
 section.resume-section {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding: 4rem 2rem !important;
   max-width: 75rem;
+  margin: 0 auto;
+
   .resume-item {
-    .resume-content {}
+    .resume-content {
+      h3 {
+        margin-bottom: 0.5rem;
+        color: var(--accent-color);
+      }
+
+      .subheading {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+
+      ul {
+        padding-left: 1.5rem;
+
+        li {
+          margin-bottom: 1rem;
+          position: relative;
+
+          &::marker {
+            color: var(--accent-color);
+          }
+
+          a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+
+            &:hover {
+              color: var(--accent-secondary);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
     .resume-date {
       min-width: none;
+      font-weight: 600;
+      color: var(--accent-color);
+      text-align: right;
+      font-size: 1rem;
     }
   }
 }
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
+    padding: 6rem 3rem !important;
+
     .resume-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+
+      .resume-content {
+        flex: 1;
+      }
+
       .resume-date {
-        min-width: 18rem;
+        min-width: 12rem;
+        flex-shrink: 0;
+        text-align: right;
+        padding-top: 0.5rem;
       }
     }
   }
 }
+
 @media (min-width: 992px) {
   section.resume-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding: 4rem 3rem !important;
   }
 }

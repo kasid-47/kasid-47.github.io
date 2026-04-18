@@ -25,15 +25,51 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$primary:       $orange !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+// Modern Professional Color Scheme
+$primary-dark: #1a1a2e !default;
+$primary-light: #16213e !default;
+$accent: #0f3460 !default;
+$accent-secondary: #533483 !default;
+$text-light: #e8e8e8 !default;
+$text-dark: #2c3e50 !default;
+$card-bg-light: #ffffff !default;
+$card-bg-dark: #2a2a3a !default;
+$border-light: #e1e8ed !default;
+$border-dark: #3a3a4a !default;
+
+$primary: $accent !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $primary-dark !default;
 
 // Page Variables
-
 $sidebar-base-width: 17rem;
+
+// Dark Mode Variables
+:root {
+  --bg-primary: #{$card-bg-light};
+  --bg-secondary: #{$primary-light};
+  --text-primary: #{$text-dark};
+  --text-secondary: #{$gray-600};
+  --accent-color: #{$accent};
+  --accent-secondary: #{$accent-secondary};
+  --border-color: #{$border-light};
+  --card-bg: #{$card-bg-light};
+  --nav-bg: #{$primary-dark};
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{$primary-dark};
+  --bg-secondary: #{$primary-light};
+  --text-primary: #{$text-light};
+  --text-secondary: #{$gray-400};
+  --accent-color: #{$accent-secondary};
+  --accent-secondary: #{$accent};
+  --border-color: #{$border-dark};
+  --card-bg: #{$card-bg-dark};
+  --nav-bg: #{$primary-dark};
+}
