@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.05 });
 
         sectionObserver.observe(section);
     });
